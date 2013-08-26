@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/layout-and-module.css">
+    <link rel="stylesheet" href="css/main.css">        
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/myortho.css">
+    <link rel="stylesheet" href="lib/pikaday/pikaday.css">
+</head>
+<body data-grid-framework="b3" data-grid-color="black" data-grid-opacity="0.5" data-grid-zindex="10" data-grid-nbcols="16">
+    <!--
+Framework codes: b3 (Bootstrap 3), bo (Bootstrap 2 fixed), bf (Bootstrap 2 fluid), f4 (Foundation 4), f3 (Foundation 3), f2 (Foundation 2).
+Note: 'Nb cols' parameter for Bootstrap only.
+-->             
+    <!-- Add your site or application content here -->
+    <div id="header" class="header">
+        <ul id="nav" class="nav unstyled pl0 ma0">
+            <li>
+                <a class="iconx2 icon-medecin pa2 darkAgain" href="#" title="TREOUR"></a>
+            </li><!--
+         --><li class="js-ajouter-bilan activate-hover">
+                <a  class="iconx2 icon-user-add pa2" href="#" title="FRET"></a>
+            </li><!--
+         --><li class="js-bilans activate-hover">
+                <a class="iconx2 icon-documents pa2" href="#">Bilans</a>
+            </li>
+        </ul>        
+<!--
+        <form class="search-application" method="GET" action="/dashboard/pc6x2/search">
+            <input type="text" placeholder="search" name="q">
+        </form>
+-->
+    </div>
+    <div class="alert center mt1 mb1 w60 invisible">Vous avez validé</div>
+<!--    <a class="poplight" data-rel="popup1" data-width="500" href="#">Voir la pop-up - Width = 500px</a>-->
+    
+    <div id="main" class="main"></div>
+    
+    
+    <!--    <div class="popup_block" id="popup1" style="display: none; width: 500px; margin-top: -160px; margin-left: -290px;">
+<p>Coucou</p>
+
+</div>-->
+    
+    
+    <!--<div class="bottom">
+<input type="button" class="btn" value="Continue" id="continue_button" style="display: inline;">
+<input type="submit" title="Save account changes" value="Save all changes" class="buttonMode dark">
+<input type="submit" title="Save account changes" value="Save all changes" class="buttonMode blue">
+<button type="submit" title="Save account changes" class="buttonMode blue">
+<span class="icon icon-list"></span>Save all changes
+</button>
+<button type="submit" title="Save account changes" value="Save all changes">
+<span class="icon icon-minus"></span>sqsq
+</button>
+</div>-->
+    <script src="lib/jquery/jquery-1.7.2.min.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/moment/lang/fr.js"></script>
+    <script src="lib/pikaday/pikaday.min.js"></script>
+    <script src="lib/jsrender/jsrender.min.js"></script>
+    <script src="lib/jsrender/jsrender.utils.js"></script>
+    <script src="lib/amplify/amplify.store.min.js"></script>
+<!--    <script src="js/myOrtho.js"></script>-->
+    <script src="js/app.js"></script>
+    <script>
+        $(function () {
+//            my.vm = (function () {
+//                var metadata = {
+//                    title: "JsRender Quickstart - External Template",
+//                    concepts: [
+//                        {
+//                            concept: "Render an array to an external template:",
+//                            lines: [
+//                                "var file = '/templates/_medMovie.tmpl.html';",
+//                                "$.get(file, function (template) {",
+//                                "var tmpl = $.templates(template);",
+//                                "htmlString = tmpl.render(my.vm);",
+//                                "$('#movieList').html(htmlString);});"
+//                            ]
+//                        }]
+//                },
+//                    movies = {};// my.getMovies(),
+//                renderTemplate = my.utils.renderExternalTemplate;
+//                return {
+//                    metadata: metadata,
+//                    movies: movies,
+//                    renderExternalTemplate: renderTemplate
+//                };
+//            })();
+            
+                
+            $('.js-ajouter-bilan').on('click', function(){
+//                console.log(this);
+                my.utils.renderExternalTemplate("ajouterBilan", "#main");
+            });
+            
+            $('.js-bilans').on('click', function(){
+//                console.log('.js-bilans');
+                var bilans = amplify.store('bilans');
+                my.utils.renderExternalTemplate("bilans", "#main", bilans);
+            });    
+            
+            $('#nav a').on('click', function(){
+                
+                $('#nav a').parent().addClass('activate-hover');
+                $(this).parent().removeClass('activate-hover');
+                $('#nav a').removeClass('is-active');
+                $(this).removeClass('is-default').addClass('is-active');                
+            });
+            
+            $('#nav a').on('hover', function(){
+                console.log('hover...');
+                $(this).toggleClass('is-hover');
+//                $(this).removeClass('is-default').addClass('nav-hover');
+            });
+            
+//            console.log(my.vm.renderExternalTemplate("header", "#header"));
+            //            .done(function() { alert("second success"); })
+            //                my.vm.renderExternalTemplate("bilans", "#main");
+            //                debugger;                
+        });               
+    </script>
+</body>
+</html>

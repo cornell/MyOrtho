@@ -1,0 +1,28 @@
+<ul class="unstyled w90 center pl0">
+    <li class="info-patient-list mt2">
+        <div class="date-patient-mod inbl w15">
+            <span class="nom-patient inbl pt1 pl1">{{:nomPatient}} {{:prenomPatient}}</span>
+            <div class="nom-patient pt3 pb1 pl1">{{:telephone}}</div>
+        </div><!--
+--><div class="date-patient-mod inbl w55 pa1">{{:anamnese}}
+        </div><!--
+--><ul class="unstyled date-patient-mod inbl w15 pl1 ma0">
+        <li class="mt1"><span class="icon icon-user mrs"></span>{{:origineDemande}}</li>
+        <li class="mt1"><span class="icon icon-medecin mrs"></span>{{:domaine}}</li>
+        <li class="mt1"><span class="icon icon-document mrs"></span>{{:etatBilan}}</li>
+        </ul><!--
+--><div class="date-patient-mod inbl w15">
+        <label class="inbl mt1">Date de la demande</label>
+        <div>{{:dateDemandeBilan}}</div>
+        <label class="inbl mt1">Date du bilan</label>
+        <div class="mb1">{{:dateBilan}}</div>
+        </div>
+    </li><!--
+-->
+</ul>
+<!--<script>
+    $(function(){
+        
+         amplify.store('bilans');
+    });
+</script>-->

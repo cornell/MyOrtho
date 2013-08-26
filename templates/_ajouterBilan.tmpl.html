@@ -1,0 +1,71 @@
+<form action="#" method="get" onsubmit="">
+    <div class="ajouter-bilan center w90">
+        <div class="mt2">
+            <label for="js-dateDemandeBilan">Date de la demande du bilan</label>
+            <input id="js-dateDemandeBilan" type="text" placeholder="dd/mm/yyyy">
+        </div>
+        <div class="mt2">
+            <label for="js-nomPatient">Nom du patient</label>
+            <input id="js-nomPatient" type="text">
+        </div>
+        <div class="mt2">
+            <label for="js-prenomPatient">Prénom du patient</label>
+            <input id="js-prenomPatient" type="text">
+        </div>        
+        <div class="mt2">
+            <label for="js-origineDemande">Origine de la demande</label>
+            <select id="js-origineDemande">
+                <option>Médecin</option>
+                <option>Instituteur</option>
+            </select>
+        </div>
+        <div class="mt2">
+            <label for="js-domaineIntervention">Domaine d'intervention</label>
+            <select name="" id="js-domaineIntervention">
+                <option>Déglutition</option>
+                <option>Neurologie</option>
+                <option>Langage oral</option>
+            </select>
+        </div>
+        <div class="mt2">
+            <label for="js-telephone">Téléphone</label>
+            <input id="js-telephone" type="text">
+        </div>
+        <div class="mt2">
+            <label for="js-commentaire">Commentaire</label>
+            <textarea id="js-commentaire" type="text"></textarea>
+        </div>
+        <div class="mt2">
+            <label for="js-dateBilan">Date du bilan</label>
+            <input id="js-dateBilan" type="text">
+        </div>
+        <div class="mt2">
+            <label for="js-disponibilitePatient">Disponibilité du patient</label>
+            <textarea id="js-disponibilitePatient" type="text"></textarea>
+        </div>        
+    </div>
+    <input id="js-ajouterPatient" type="submit" class="btnSubmit buttonMode dark right" value="Enregistrer">
+</form>
+<script>
+    $(function(){
+        $('#js-ajouterPatient').on('submit', function(){
+            
+            var nouveauPatient = {            
+                
+                'dateDemandeBilan' : $('#js-dateDemandeBilan').val(),
+                'nomPatient' : $('#js-nomPatient').val(),
+                'prenomPatient' : $('#js-prenomPatient').val(),
+                'origineDemande' : $('#js-origineDemande').val(),
+                'domaineIntervention' : $('#js-domaineIntervention').val(),
+                'telephone' : $('#js-telephone').val(),
+                'commentaire' : $('#js-commentaire').val(),
+                'dateBilan' : $('#js-dateBilan').val(),
+                'disponibilitePatient' : $('#js-disponibilitePatient').val()            
+            };
+            debugger;
+            var bilans = amplify.store('bilans') || [];
+            bilans.push(nouveauPatient)            
+            amplify.store('bilans', bilans);
+        });
+    });
+</script>

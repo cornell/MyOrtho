@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'open-sans-regular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open-sans-semibold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon:before,
+.iconx2:before,
+.icon-documents, 
+.icon-user-add, 
+.icon-user, 
+.icon-medecin, 
+.icon-document-add, 
+.icon-document {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+/*	line-height: 1;*/ /* hide, else header border exceed */ 
+    position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-documents:before {
+	content: "\e000";
+}
+.icon-user-add:before {
+	content: "\e001";
+}
+.icon-user:before {
+	content: "\e002";
+}
+.icon-medecin:before {
+	content: "\e003";
+}
+.icon-document-add:before {
+	content: "\e004";
+}
+.icon-document:before {
+	content: "\e005";
+}
+
+.darkAgain { color:#000000; position:relative; }
+.darkAgain:before {
+    content: attr(title);
+    
+    color:rgba(255,255,255,0.1);
+    top:1px;
+    left:1px;
+    padding:50px;
+}
