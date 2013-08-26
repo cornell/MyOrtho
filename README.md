@@ -1,4 +1,3 @@
 ## Ceci est un projet demo
 
-JE souhaite apprendre git
-cool
+Création d'une application démo en SPA
