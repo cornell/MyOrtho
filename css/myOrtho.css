@@ -1,4 +1,4 @@
-html, input, select, textarea {
+html, input, select, textarea, button {
     font-family: "open-sans-regular";    
 }
 
@@ -28,13 +28,18 @@ html {
 .nom-patient{
     list-style-type:none;
 }
-.info-patient-list{
+.infoPatientList{
     background-color: #FBFCFD;/*#F0F3F8; *//*#CDCDCD;*/
     border: 1px solid #C8CCD4;
     border-radius: 3px;
     box-shadow: 1px 1px 1px #DDDDDD;
     color:#333333;/*#4B4B4B;#*/
 }
+
+.infoPatientList:hover{
+    cursor:pointer;
+}
+
 .date-patient-mod {
     /*background-color: green;*/
 }
@@ -116,19 +121,19 @@ input, textarea {
     width: 100%;
 }
 .buttonMode.blue {
-    background: -moz-linear-gradient(center top , #3AA9FF 0%, #2199F6 100%) repeat scroll 0 0 #3AA9FF;
+    background: linear-gradient(center top , #3AA9FF 0%, #2199F6 100%) repeat scroll 0 0 #3AA9FF;
     border: 1px solid #1A76BF;
     box-shadow: 1px 1px 0 #75C3FF inset, -1px -1px 0 #75C3FF inset;
     color: #FFFFFF;
     text-shadow: 0 1px 0 #1A76BF;
 }
 .buttonMode.blue:hover {
-    background: -moz-linear-gradient(center top , #39A6FB 0%, #2194EE 100%) repeat scroll 0 0 #39A6FB;
+    background: linear-gradient(center top , #39A6FB 0%, #2194EE 100%) repeat scroll 0 0 #39A6FB;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 1px 0 #75C3FF inset, 0 -1px 0 rgba(0, 0, 0, 0.02);
     color: #FFFFFF;
 }
 .buttonMode.blue:active, .buttonMode.blue.active {
-    background: -moz-linear-gradient(center top , #0F8EF0 0%, #2098F6 100%) repeat scroll 0 0 #0F8EF0;
+    background: linear-gradient(center top , #0F8EF0 0%, #2098F6 100%) repeat scroll 0 0 #0F8EF0;
     border-color: #1970B6;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08) inset, 0 -1px 0 rgba(0, 0, 0, 0.02) inset;
     color: #FFFFFF;
@@ -139,19 +144,19 @@ input, textarea {
 
 .buttonMode.dark {
     /*background: -moz-linear-gradient(center top , #2F3946 0%, #1D2735 100%) repeat scroll 0 0 #2F3946;*/
-    background: -moz-linear-gradient(center top , #384352 0%, #2F3946 100%) repeat scroll 0 0 #2F3946;
+    background: linear-gradient(to bottom , #384352 0%, #2F3946 100%) repeat scroll 0 0 #2F3946;
     border: 1px solid #1D2735;
     box-shadow: 1px 1px 0 #7B95B5 inset, -1px -1px 0 #7B95B5 inset;
     color: #FFFFFF;
     text-shadow: 0 1px 0 #1D2735;
 }
 .buttonMode.dark:hover {
-    background: -moz-linear-gradient(center top , #2F3946 0%, #384352 100%) repeat scroll 0 0 #384352;
+    background: linear-gradient(center top , #2F3946 0%, #384352 100%) repeat scroll 0 0 #384352;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 1px 0 #7B95B5 inset, 0 -1px 0 rgba(0, 0, 0, 0.02);
     color: #FFFFFF;
 }
 .buttonMode.dark:active, .buttonMode.dark.active {
-    background: -moz-linear-gradient(center top , #2F3946 0%, #384352 100%) repeat scroll 0 0 #384352;
+    background: linear-gradient(center top , #2F3946 0%, #384352 100%) repeat scroll 0 0 #384352;
     border-color: #1D2735;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08) inset, 0 -1px 0 rgba(0, 0, 0, 0.02) inset;
     color: #FFFFFF;
@@ -161,12 +166,12 @@ input, textarea {
 
 
 .buttonMode:hover {
-    background: -moz-linear-gradient(center top , #E9ECF1 0%, #D1D5DD 100%) repeat scroll 0 0 #E9ECF1;
+    background: linear-gradient(center top , #E9ECF1 0%, #D1D5DD 100%) repeat scroll 0 0 #E9ECF1;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 1px 0 white inset, 0 -1px 0 rgba(0, 0, 0, 0.02);
     color: #2F3946;
 }
 .buttonMode:active, .buttonMode.active {
-    background: -moz-linear-gradient(center top , #E9ECF1 0%, #D1D5DD 100%) repeat scroll 0 0 #E9ECF1;
+    background: linear-gradient(center top , #E9ECF1 0%, #D1D5DD 100%) repeat scroll 0 0 #E9ECF1;
     border-color: #9DA6B6;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08) inset, 0 -1px 0 rgba(0, 0, 0, 0.02) inset;
     color: #2F3946;
@@ -240,8 +245,8 @@ select {
 
 input[type="text"]:focus,
 textarea:focus{
-    border-color: gray;
-    box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 2px gray;
+    border-color: #3298DE;
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 1px #3298DE;
 }
 
 .search-form {
@@ -249,20 +254,22 @@ textarea:focus{
     box-shadow: 1px 1px 2px #DDD;
 }
 
-.ajouter-bilan input, 
 .ajouter-bilan label, 
+.ajouter-bilan input, 
 .ajouter-bilan select,
-.ajouter-bilan textarea {
+.ajouter-bilan textarea,
+.ajouter-bilan button{
     margin-top: 5px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 600px;
 }
 
+.ajouter-bilan label, 
 .ajouter-bilan input, 
 .ajouter-bilan select,
-.ajouter-bilan textarea {
+.ajouter-bilan textarea,
+.ajouter-bilan button{
     width: 300px;
 }
 
@@ -311,20 +318,95 @@ a .is-hover {
 }
 
 
-.is-active {
+.menu-active {
     color: inherit;
     background: #F0F3F8;
+/*
+    border-color: gray;
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 2px gray;
+*/
+}
+
+.list-active {
+    border-color: #3298DE;
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 1px #3298DE;        
 }
 
 a {
     color:rgba(211, 211, 211, .8);
 }
 
+/* $buttons */
+
 .btnSubmit {
     width:200px;
     margin-right: 150px;
     margin-top: 20px;
 }
+
+.btn {
+    width: 200px;
+    
+}
+
+.btn-action {
+    background-color: #E5E9E8;
+    border: 1px solid #A5A8A8;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px #FFFFFF inset;
+    color: #454545;
+/*
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    padding: 0 1.16rem;
+*/
+    padding: 10px;
+    text-shadow: 0 1px #FFFFFF;
+    vertical-align: top;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.btn-action.activate:hover {
+    background-color: #D3D7D7;
+}
+
+.btn-action.activate:active {
+    background-color: #D3D7D7;
+    box-shadow: 0 1px rgba(0, 0, 0, 0.12) inset
+}
+
+.smooth {
+    transition-property : background-color, color, border-color;
+    transition-duration: .3s;
+}
+
+.btn-action.hide {
+    background-color: #EBEEF0;
+    color: #9B9C9F;
+    border-color: #CBCDD0;
+    cursor: default;
+}
+
+.btn-action-blue {
+    background-color: #3A87AD;
+    border: 1px solid #214E64;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px #B2D4E5 inset;
+    color: #FFFFFF;
+    padding: 10px;
+    text-shadow: 0 1px #275A74;
+}
+
+.btn-action-blue:hover {
+    background-color: #4196bf;
+}
+
+.btn-action-blue:active {
+    box-shadow: 0 1px rgba(0, 0, 0, 0.12) inset;
+}
+
 
 /* --------------------------------------------------------------------- */
 .alert {
@@ -361,4 +443,9 @@ a {
 .frm-error {
     color: #E18B00;
     margin-left: 10px;
+}
+
+/* --------------------------------------------------------------------------- */
+.block {
+    display: block;
 }

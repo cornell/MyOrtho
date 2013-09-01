@@ -28,10 +28,7 @@ Note: 'Nb cols' parameter for Bootstrap only.
     <div id="header" class="header">
         <ul id="nav" class="nav unstyled pl0 ma0">
             <li>
-                <a class="iconx2 icon-medecin pa2 darkAgain" href="#" title="TREOUR"></a>
-            </li><!--
-         --><li class="js-ajouter-bilan activate-hover">
-                <a  class="iconx2 icon-user-add pa2" href="#" title="FRET"></a>
+                <a class="iconx2 icon-medecin pa2 darkAgain" href="#" title="MyOrtho"></a>
             </li><!--
          --><li class="js-bilans activate-hover">
                 <a class="iconx2 icon-documents pa2" href="#">Bilans</a>
@@ -46,7 +43,8 @@ Note: 'Nb cols' parameter for Bootstrap only.
     <div class="alert center mt1 mb1 w60 invisible">Vous avez validé</div>
 <!--    <a class="poplight" data-rel="popup1" data-width="500" href="#">Voir la pop-up - Width = 500px</a>-->
     
-    <div id="main" class="main"></div>
+    <div id="main" class="main">
+    </div>
     
     
     <!--    <div class="popup_block" id="popup1" style="display: none; width: 500px; margin-top: -160px; margin-left: -290px;">
@@ -73,6 +71,7 @@ Note: 'Nb cols' parameter for Bootstrap only.
     <script src="lib/jsrender/jsrender.min.js"></script>
     <script src="lib/jsrender/jsrender.utils.js"></script>
     <script src="lib/amplify/amplify.store.min.js"></script>
+    <script src="lib/lodash/lodash.compat.min.js"></script>
 <!--    <script src="js/myOrtho.js"></script>-->
     <script src="js/app.js"></script>
     <script>
@@ -104,12 +103,12 @@ Note: 'Nb cols' parameter for Bootstrap only.
                 
             $('.js-ajouter-bilan').on('click', function(){
 //                console.log(this);
-                my.utils.renderExternalTemplate("ajouterBilan", "#main");
+                my.utils.renderExternalTemplate("ajouterBilan", "#main", {});
             });
             
             $('.js-bilans').on('click', function(){
-//                console.log('.js-bilans');
-                var bilans = amplify.store('bilans');
+
+                var bilans = amplify.store('bilans');            
                 my.utils.renderExternalTemplate("bilans", "#main", bilans);
             });    
             
@@ -117,12 +116,12 @@ Note: 'Nb cols' parameter for Bootstrap only.
                 
                 $('#nav a').parent().addClass('activate-hover');
                 $(this).parent().removeClass('activate-hover');
-                $('#nav a').removeClass('is-active');
-                $(this).removeClass('is-default').addClass('is-active');                
+                $('#nav a').removeClass('menu-active');
+                $(this).removeClass('is-default').addClass('menu-active');                
             });
             
             $('#nav a').on('hover', function(){
-                console.log('hover...');
+//                console.log('hover...');
                 $(this).toggleClass('is-hover');
 //                $(this).removeClass('is-default').addClass('nav-hover');
             });

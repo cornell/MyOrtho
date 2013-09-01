@@ -1,71 +1,50 @@
 <form action="#" method="get" onsubmit="">
-    <div class="ajouter-bilan center w90">
+    <div class="ajouter-bilan center w90" data-id={{:id}}>
         <div class="mt2">
             <label for="js-dateDemandeBilan">Date de la demande du bilan</label>
-            <input id="js-dateDemandeBilan" type="text" placeholder="dd/mm/yyyy">
+            <input id="js-dateDemandeBilan" type="text" value="{{:dateDemandeBilan}}" autofocus="autofocus">
         </div>
         <div class="mt2">
             <label for="js-nomPatient">Nom du patient</label>
-            <input id="js-nomPatient" type="text">
+            <input id="js-nomPatient" type="text" value="{{:nomPatient}}">
         </div>
         <div class="mt2">
             <label for="js-prenomPatient">Prénom du patient</label>
-            <input id="js-prenomPatient" type="text">
+            <input id="js-prenomPatient" type="text" value="{{:prenomPatient}}">
         </div>        
         <div class="mt2">
             <label for="js-origineDemande">Origine de la demande</label>
             <select id="js-origineDemande">
-                <option>Médecin</option>
-                <option>Instituteur</option>
+                <option {{if origineDemande === 'Médecin'}} selected {{/if}}>Médecin</option>
+                <option {{if origineDemande === 'Instituteur'}} selected {{/if}}>Instituteur</option>
             </select>
         </div>
         <div class="mt2">
             <label for="js-domaineIntervention">Domaine d'intervention</label>
             <select name="" id="js-domaineIntervention">
-                <option>Déglutition</option>
-                <option>Neurologie</option>
-                <option>Langage oral</option>
+                <option {{if domaineIntervention === 'Déglutition'}} selected {{/if}}>Déglutition</option>
+                <option {{if domaineIntervention === 'Neurologie'}} selected {{/if}}>Neurologie</option>
+                <option {{if domaineIntervention === 'Langage oral'}} selected {{/if}}>Langage oral</option>
             </select>
         </div>
         <div class="mt2">
             <label for="js-telephone">Téléphone</label>
-            <input id="js-telephone" type="text">
+            <input id="js-telephone" type="text" value="{{:telephone}}">
         </div>
         <div class="mt2">
-            <label for="js-commentaire">Commentaire</label>
-            <textarea id="js-commentaire" type="text"></textarea>
+            <label for="js-anamnese">Commentaire</label>
+            <textarea id="js-anamnese" type="text" value={{:anamnese}}></textarea>
         </div>
         <div class="mt2">
             <label for="js-dateBilan">Date du bilan</label>
-            <input id="js-dateBilan" type="text">
+            <input id="js-dateBilan" type="text" value="{{:dateBilan}}">
         </div>
         <div class="mt2">
             <label for="js-disponibilitePatient">Disponibilité du patient</label>
-            <textarea id="js-disponibilitePatient" type="text"></textarea>
+            <textarea id="js-disponibilitePatient" type="text" value="{{:disponibilitePatient}}"></textarea>
         </div>        
-    </div>
-    <input id="js-ajouterPatient" type="submit" class="btnSubmit buttonMode dark right" value="Enregistrer">
+        <div class="mt3">
+            <button id="js-enregistrerPatient" type="submit" class="btn btn-action-blue smooth activate">Enregistrer</button>
+        </div>
+    </div>    
 </form>
-<script>
-    $(function(){
-        $('#js-ajouterPatient').on('submit', function(){
-            
-            var nouveauPatient = {            
-                
-                'dateDemandeBilan' : $('#js-dateDemandeBilan').val(),
-                'nomPatient' : $('#js-nomPatient').val(),
-                'prenomPatient' : $('#js-prenomPatient').val(),
-                'origineDemande' : $('#js-origineDemande').val(),
-                'domaineIntervention' : $('#js-domaineIntervention').val(),
-                'telephone' : $('#js-telephone').val(),
-                'commentaire' : $('#js-commentaire').val(),
-                'dateBilan' : $('#js-dateBilan').val(),
-                'disponibilitePatient' : $('#js-disponibilitePatient').val()            
-            };
-            debugger;
-            var bilans = amplify.store('bilans') || [];
-            bilans.push(nouveauPatient)            
-            amplify.store('bilans', bilans);
-        });
-    });
-</script>
