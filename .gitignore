@@ -2,8 +2,8 @@
 ## Eclipse
 #################
 
-*.txt
-*.png
+/*.txt
+/*.png
 _ReSharper.MyOrtho/
 bin/
 obj/
