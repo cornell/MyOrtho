@@ -4,3 +4,7 @@
 
 *.txt
 *.png
+_ReSharper.MyOrtho/
+bin/
+obj/
+packages/

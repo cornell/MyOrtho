@@ -1,0 +1,33 @@
+{{if #data}}
+    <div class="actionToolbar ml3">
+    <button id="js-ajouterBilan" type="button" class="btn btn-action activate">Ajouter</button>
+    <button id="js-modifierBilan" type="button" class="btn btn-action hide">Modifier</button>
+    <button id="js-supprimerBilan" type="button" class="btn btn-action hide">Supprimer</button>
+</div>
+{{/if}}
+<ul class="unstyled w90 center pl0">
+    {{for #data}}
+    <li class="infoPatientList mt2" data-id="{{:Id}}">
+        <div class="date-patient-mod inbl w15">
+            <span  class="js-nomPatientCommand nom-patient inbl pt1 pl1">{{:Nom}} {{:Prenom}}</span>
+            <div class="nom-patient pt3 pb1 pl1">{{formatPhoneNumber:Telephone}}</div>
+        </div><!--
+--><div class="date-patient-mod inbl w55 pa1">{{:Commentaire}}
+        </div><!--
+--><ul class="unstyled date-patient-mod inbl w15 pl1 ma0">
+        <li class="mt1"><span class="icon icon-user mrs"></span>{{:OrigineDemande}}</li>
+        <li class="mt1"><span class="icon icon-medecin mrs"></span>{{:DomaineIntervention}}</li>
+        <li class="mt1"><span class="icon icon-document mrs"></span>{{:EtatBilan}}</li>
+        </ul><!--
+--><div class="date-patient-mod inbl w15">
+        <label class="inbl mt1">Date de la demande</label>
+        <div>{{formatDate:DateDemandeBilan}}</div>
+        <label class="inbl mt1">Date du bilan</label>
+        <div class="mb1">{{formatDate:DateBilan}}</div>
+        </div>
+    </li><!--
+-->{{/for}}
+</ul>
+{{if ! #data}}
+    <button id="js-ajouterBilan" type="button" class="btn btn-action-blue smooth activate center  block mt20">Ajouter une demande de bilan</button>
+{{/if}}

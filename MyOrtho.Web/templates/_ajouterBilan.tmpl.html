@@ -1,0 +1,52 @@
+<form action="#" onsubmit="">
+    <div class="ajouter-bilan center w90" data-id={{:Id}}>
+        <div class="mt2">
+            <label for="js-dateDemandeBilan">Date de la demande du bilan</label>
+            <input id="js-dateDemandeBilan" type="text" value="{{:DateDemandeBilan}}" autofocus="autofocus" placeholder="jj/mm/aaaa">
+        </div>
+        <div class="mt2">
+            <label for="js-nomPatientCommand">Nom du patient</label>
+            <input id="js-nomPatient" type="text" value="{{:Nom}}">
+        </div>
+        <div class="mt2">
+            <label for="js-prenomPatientCommand">Prénom du patient</label>
+            <input id="js-prenomPatient" type="text" value="{{:Prenom}}">
+        </div>        
+        <div class="mt2">
+            <label for="js-origineDemande">Origine de la demande</label>
+            <select id="js-origineDemande">
+                <option value="0" {{if IdOrigineDemande === 0}} selected {{/if}}></option>
+                <option value="1" {{if IdOrigineDemande === 1}} selected {{/if}}>Médecin</option>
+                <option value="2" {{if IdOrigineDemande === 2}} selected {{/if}}>Instituteur</option>
+            </select>
+        </div>
+        <div class="mt2">
+            <label for="js-domaineIntervention">Domaine d'intervention</label>
+            <select name="" id="js-domaineIntervention">
+                <option value="0" {{if IdDomaineIntervention === 0}} selected {{/if}}></option>
+                <option value="1" {{if IdDomaineIntervention === 1}} selected {{/if}}>Déglutition</option>
+                <option value="2" {{if IdDomaineIntervention === 2}} selected {{/if}}>Neurologie</option>
+                <option value="3" {{if IdDomaineIntervention === 3}} selected {{/if}}>Langage oral</option>
+            </select>
+        </div>
+        <div class="mt2">
+            <label for="js-telephone">Téléphone</label>
+            <input id="js-telephone" type="text" placeholder="00 00 00 00 00" value="{{:Telephone}}">
+        </div>
+        <div class="mt2">
+            <label for="js-commentaire">Commentaire</label>
+            <textarea id="js-commentaire" rows="3" >{{:Commentaire}}</textarea>
+        </div>
+        <div class="mt2">
+            <label for="js-dateBilan">Date du bilan</label>
+            <input id="js-dateBilan" type="text" value="{{:DateBilan}}" placeholder="jj/mm/aaaa">
+        </div>
+        <div class="mt2">
+            <label for="js-disponibilitePatientCommand">Disponibilité du patient</label>
+            <textarea id="js-disponibilitePatient" rows="3">{{:Disponibilite}}</textarea>
+        </div>        
+        <div class="mt3">
+            <button id="js-enregistrerPatient" type="submit" class="btn btn-action-blue smooth activate">Enregistrer</button>
+        </div>
+    </div>    
+</form>
