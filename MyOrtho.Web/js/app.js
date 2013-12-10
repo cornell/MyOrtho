@@ -54,7 +54,7 @@
 
     $('#main').on('keyup', '#js-dateDemandeBilan, #js-dateBilan', function (e) {
 
-        console.log(e);
+//        console.log(e);
         //        debugger;
         var $this = $(this);
         // backspace
@@ -278,7 +278,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (response) {
-                //:debugger;
+                debugger;
                 //console.dir(response);
                 var dateBilan = moment(response.DateBilan).format("L");
                 var dateDemandeBilan = moment(response.DateDemandeBilan).format("L");
